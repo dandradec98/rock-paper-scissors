@@ -8,8 +8,15 @@ var pcScore = 0;
 var round = 0;
 var ended = 0;
 
+var imgSrc = [
+    "/assets/hand-rock.png",
+    "/assets/hand.png",
+    "/assets/hand-scissors.png"
+];
+
 function playerChoice(choice) {
     if (round <= 5) {
+        document.getElementById("choice_img").src = imgSrc[choice];
         var pcSel = pcChoice();
         var gMnumber = gMessage(choice, pcSel);
 
@@ -40,22 +47,18 @@ function reset() {
     if (ended == 1) {
         playerScore = 0;
         pcScore = 0;
+        round = 0;
+        ended = 0;
         document.getElementById("user_score").innerHTML = playerScore;
         document.getElementById("pc_score").innerHTML = pcScore;
         document.getElementById("reset_button").innerHTML = "Next Round";
-        document.getElementById("pc_choice").src = "../assets/question-mark.png";
+        document.getElementById("pc_choice").src = "/assets/question-mark.png";
     }
     document.getElementById("u_option").style.display = "flex";
     document.getElementById("u_choice").style.display = "None";
 }
 
 function pcChoice() {
-    var imgSrc = [
-        "../assets/hand-rock.png",
-        "../assets/hand.png",
-        "../assets/hand-scissors.png"
-    ];
-
     var numbGen = random(0, 2);
     document.getElementById("pc_choice").src = imgSrc[numbGen];
 
