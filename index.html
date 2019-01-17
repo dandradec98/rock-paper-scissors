@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock Hand Scissors!</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Rock Hand Scissors!</h1>
+    <div class="game_screen">
+        <div class="user">
+            <div class="user_options" id="u_option">
+                <div class="rock circle" onclick="playerChoice(0)">
+                    <img src="assets/hand-rock.png" alt="Rock">
+                </div>
+                <div class="aux_cont">
+                    <div class="hand circle" onclick="playerChoice(1)">
+                        <img src="assets/hand.png" alt="Hand">
+                    </div>
+                    <div class="scissor circle" onclick="playerChoice(2)">
+                        <img src="assets/hand-scissors.png" alt="Scissor">
+                    </div>
+                </div>
+            </div>
+            <div class="user_choice" id="u_choice">
+                <div class="choice circle">
+                    <img src="assets/hand-rock.png" alt="User choice">
+                </div>
+            </div>
+            <div class="user_name">
+                <span id="user_name"></span>
+            </div>
+        </div>
+        <div class="versus_info">
+            <div class="versus">
+                <img src="assets/versus.png" alt="Versus image">
+            </div>
+            <div class="score">
+                <span>
+                    <span id="user_score">0</span>
+                    -
+                    <span id="pc_score">0</span>
+                </span>
+            </div>
+            <button id="reset_button" type="button" onclick="reset()">Next Round</button>
+        </div>
+        <div class="pc">
+            <div class="pc_option">
+                <div class="pc_choice circle">
+                    <img id="pc_choice" src="assets/question-mark.png" alt="Pc choice">
+                </div>
+            </div>
+            <div class="name_pc">
+                <span>PC</span>
+            </div>
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+</body>
+
+</html>
